@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="usuario"
+            type="es.login.ejercicio4tokio.Usuario" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A4D5D0"
+        tools:context=".MainActivity">
+
+        <!--Aqui va el Toolbar-->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_700"
+            android:minHeight="?attr/actionBarSize"
+            android:paddingLeft="40dp"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:logo="?attr/actionModeCloseDrawable"
+            app:title="Registro" />
+
+        <!--Aqui va la imagen de Perfil-->
+
+        <ImageView
+            android:id="@+id/imagenPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:srcCompat="@drawable/imagen_registro" />
+
+        <ImageView
+            android:id="@+id/botonImagen"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imagenPerfil"
+            app:layout_constraintEnd_toEndOf="@+id/imagenPerfil"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/imagenPerfil"
+            app:layout_constraintTop_toTopOf="@+id/imagenPerfil"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/camara" />
+
+        <!--Aqui va el layout de Nombre-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/nombreLayout"
+            android:layout_width="270dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/borde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenPerfil">
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/nombre"
+            android:layout_width="241dp"
+            android:layout_height="53dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="¿Como te llamas?"
+            android:text="@={usuario.nombre}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/nombreLayout"
+            app:layout_constraintEnd_toEndOf="@+id/nombreLayout"
+            app:layout_constraintStart_toStartOf="@+id/nombreLayout"
+            app:layout_constraintTop_toBottomOf="@+id/imagenPerfil" />
+
+        <ImageView
+            android:id="@+id/face"
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nombreLayout"
+            app:layout_constraintEnd_toStartOf="@+id/nombre"
+            app:layout_constraintStart_toStartOf="@+id/nombreLayout"
+            app:layout_constraintTop_toTopOf="@+id/nombreLayout"
+            app:srcCompat="@drawable/face" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nombreLayout"
+            app:layout_constraintEnd_toEndOf="@+id/nombreLayout"
+            app:layout_constraintTop_toTopOf="@+id/nombreLayout"
+            app:srcCompat="@drawable/eye" />
+
+        <!--Aqui va el input de apellidos-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/apellidos_layout"
+            android:layout_width="270dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/borde"
+            app:layout_constraintEnd_toEndOf="@+id/nombreLayout"
+            app:layout_constraintStart_toStartOf="@+id/nombreLayout"
+            app:layout_constraintTop_toBottomOf="@+id/nombreLayout">
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/apellidos"
+            android:layout_width="208dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="¿Y tu apellido?"
+            android:text="@={usuario.apellidos}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/apellidos_layout"
+            app:layout_constraintEnd_toEndOf="@+id/apellidos_layout"
+            app:layout_constraintStart_toStartOf="@+id/apellidos_layout"
+            app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/apellidos_layout"
+            app:layout_constraintStart_toStartOf="@+id/apellidos_layout"
+            app:layout_constraintTop_toTopOf="@+id/apellidos"
+            app:srcCompat="@drawable/face" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="39dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/apellidos_layout"
+            app:layout_constraintEnd_toEndOf="@+id/apellidos_layout"
+            app:layout_constraintTop_toTopOf="@+id/apellidos_layout"
+            app:srcCompat="@drawable/eye" />
+
+
+        <!--Aqui va el spinner de la edad-->
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="270dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/spinner_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/apellidos_layout"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="43dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="@+id/spinner"
+            app:layout_constraintTop_toTopOf="@+id/spinner"
+            app:srcCompat="@drawable/arrow" />
+
+        <!--Aquí va el botón-->
+
+        <Button
+            android:id="@+id/boton"
+            android:layout_width="174dp"
+            android:layout_height="51dp"
+            android:background="#FFC107"
+            android:layout_marginTop="40dp"
+            android:text="Me apunto"
+            android:textAllCaps="false"
+            android:textColor="#FDFAFB"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+        <!--Aqui va la Política de Privacidad-->
+
+        <TextView
+            android:id="@+id/politica_privacidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="32dp"
+            android:text="Política de Privacidad"
+            app:layout_constraintEnd_toEndOf="@+id/boton"
+            app:layout_constraintHorizontal_bias="0.449"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/boton" />
+
+        <!--Aqui va el TextView de ver Condiciones-->
+
+        <TextView
+            android:id="@+id/condiciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:text="Ver Condiciones"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/politica_privacidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.323"
+            app:layout_constraintStart_toEndOf="@+id/politica_privacidad"
+            app:layout_constraintTop_toTopOf="@+id/politica_privacidad"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

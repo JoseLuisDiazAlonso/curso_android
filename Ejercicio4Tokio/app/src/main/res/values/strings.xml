@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ejercicio4Tokio</string>
+    <string-array name="edad_options">
+        <item>¿Cuantos años tienes?</item>
+        <item>0-5</item>
+        <item>6-11</item>
+        <item>12-17</item>
+        <item>18-99</item>
+    </string-array>
+</resources>
